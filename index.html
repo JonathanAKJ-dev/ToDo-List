@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body class="bg-gray-100 min-h-screen p-4 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100">My To-Do List</h1>
+            <button id="toggle-dark" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                Toggle Dark Mode
+            </button>
+        </div>
+        <div class="flex gap-4 mb-6">
+            <input id="search" type="text" placeholder="Search tasks..." class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="add-task" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">Add Task</button>
+        </div>
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Progress</label>
+            <progress id="progress-bar" value="0" max="100" class="w-full h-2 bg-gray-200 dark:bg-gray-600"></progress>
+            <span id="progress-text" class="text-sm text-gray-600 dark:text-gray-400 mt-1 inline-block">0% Complete (0/0 tasks)</span>
+        </div>
+        <div id="task-list" class="space-y-4"></div>
+    </div>
+
+    <!-- Add Task Modal -->
+    <div id="task-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md mx-4">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Add/Edit Task</h2>
+            <form id="task-form">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Task Title</label>
+                    <input type="text" id="task-title" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Category</label>
+    <select id="task-category" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+        <option value="others">Others</option>
+    </select>
+</div>
+<div class="mb-4 hidden" id="custom-category-container">
+    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Custom Category</label>
+    <input type="text" id="custom-category" placeholder="Enter custom category" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+</div>
+<div class="mb-4">
+    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Deadline (Optional)</label>
+    <input type="datetime-local" id="task-deadline" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+</div>
+                <div class="flex justify-end gap-2">
+                    <button type="button" id="cancel-task" class="px-4 py-2 bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-500">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+</html>

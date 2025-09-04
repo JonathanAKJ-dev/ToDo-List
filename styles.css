@@ -1,0 +1,70 @@
+ body.dark {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .task-completed {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        .category-tag {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .work { background-color: #fef3c7; color: #92400e; }
+        .personal { background-color: #d1fae5; color: #166534; }
+        .urgent { background-color: #fee2e2; color: #b91c1c; }
+        .body.dark .work { background-color: #4a5568; color: #fbbf24; }
+        .body.dark .personal { background-color: #2d3748; color: #68d391; }
+        .body.dark .urgent { background-color: #4a5568; color: #fc8181; }
+        progress {
+            width: 100%;
+        }
+        /* Spacing */
+.p-4 {
+  padding: 1rem; /* 16px */
+}
+.m-2 {
+  margin: 0.5rem; /* 8px */
+}
+
+/* Colors */
+.bg-blue-500 {
+  background-color: #3b82f6;
+}
+.text-white {
+  color: white;
+}
+
+/* Flexbox */
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Rounded corners */
+.rounded-lg {
+  border-radius: 0.5rem; /* 8px */
+}
+
+/* Text */
+.text-center {
+  text-align: center;
+}
+.font-bold {
+  font-weight: 700;
+}
+.others {
+    background-color: #dbeafe; /* light blue */
+    color: #1e40af; /* blue-800 */
+}
+.body.dark .others {
+    background-color: #2a4365; /* dark blue */
+    color: #90cdf4; /* blue-300 */
+}
